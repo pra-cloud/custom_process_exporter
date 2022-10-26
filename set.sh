@@ -5,7 +5,7 @@ cat <<EOF >>/usr/bin/test.sh
 while true
 do
 
-/root/custom_process_exporter/grafana_push.sh;
+/root/custom_process_exporter/./grafana_push.sh;
 
 sleep 1
 done
