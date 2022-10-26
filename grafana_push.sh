@@ -1,4 +1,5 @@
 #!/bin/bash
+host="$(hostnamectl | awk '/hostname/ {print $3}')"
 z=$(ps -aux)
 while read -r z
 do
