@@ -1,11 +1,13 @@
 #!/bin/bash
 
+mv /root/custom_process_exporter/*  /root/
+
 cat <<EOF >>/usr/bin/test.sh
 #!/bin/bash
 while true
 do
 
-/root/custom_process_exporter/./grafana_push.sh;
+/root/./grafana_push.sh;
 
 sleep 1
 done
@@ -13,7 +15,6 @@ done
 EOF
 
 
-#chmod +x /usr/bin/test.sh
 
 cat <<EOF >>/lib/systemd/system/shellscript.service
 
@@ -29,7 +30,7 @@ WantedBy=multi-user.target
 
 EOF
 
-chmod +x /root/custom_process_exporter/grafana_push.sh
+chmod +x /root/grafana_push.sh
 chmod +x /usr/bin/test.sh
 
 
